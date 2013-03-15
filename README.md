@@ -1,13 +1,11 @@
 ASCIIFY
 =======
-
-                                      __________________________  ______________
-                                      \__    ___/\_   _____/\   \/  /\__    ___/
-  Takes text, awesomizes it, returns    |    |    |    __)_  \     /   |    |   
-                                        |    |    |        \ /     \   |    |   
-                                        |____|   /_______  //___/\  \  |____|   
-                                                         \/       \_/           
-
+                                        __________________________  ______________
+                                        \__    ___/\_   _____/\   \/  /\__    ___/
+    Takes text, awesomizes it, returns    |    |    |    __)_  \     /   |    |   
+                                          |    |    |        \ /     \   |    |   
+                                          |____|   /_______  //___/\  \  |____|   
+                                                           \/       \_/           
 
 An hybrid npm module and CLI for turning plain-text into ascii-art.
 
@@ -32,6 +30,7 @@ Install asciify:
     /    |    \ \     / \  ___/  \___ \ (  <_> )|  Y Y  \\  ___/ 
     \____|__  /  \/\_/   \___  >/____  > \____/ |__|_|  / \___  >
             \/               \/      \/               \/      \/ 
+
 
 
     asciify('Fonts?', {font:'3-d'}, function(text){ console.log(text));

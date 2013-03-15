@@ -1,0 +1,33 @@
+{
+  "name": "asciify",
+  "version": "1.0.0",
+  "description": "Plain text awesomizer",
+  "main": "index.js",
+  "dependencies": {
+    "optimist": "~0.3.5"
+  },
+  "devDependencies": {
+    "tap": "~0.4.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tap ./test"
+  },
+  "bin": {
+    "asciify": "./bin/asciify.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/olizilla/asciify"
+  },
+  "keywords": [
+    "ascii",
+    "art",
+    "figlet",
+    "banner",
+    "text"
+  ],
+  "author": "olizilla"
+}

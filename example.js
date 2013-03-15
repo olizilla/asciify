@@ -1,4 +1,8 @@
 
 var asciify = require('./asciify');
 
-console.log(asciify('Hello!'));
+asciify('Hello!', function(result){
+
+	console.log(result);
+
+});

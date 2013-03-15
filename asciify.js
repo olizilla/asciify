@@ -3,9 +3,25 @@
  * https://github.com/olizilla/asciify
  */
 
-module.exports = function (text, opts) {
+var figlet = require('./lib/figlet-js/figlet-node');
 
-	if (!opts) opts = { font: 'graffiti' };
+module.exports = function (text, opts, callback) {
 
-	return text;
+	if (typeof opts === 'function') { 
+		callback = opts; 
+		opts = null; 
+	}
+
+	if (!opts) { 
+		opts = { font: 'graffiti' }; 
+	}
+
+	if (!callback){
+		// TODO: Do it sync style
+	}
+
+	figlet.Figlet.write(text, opts.font, function(asciifiedText){
+
+		callback(asciifiedText);
+	});
 };

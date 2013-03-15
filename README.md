@@ -7,7 +7,8 @@ ASCIIFY
                                           |____|   /_______  //___/\  \  |____|   
                                                            \/       \_/           
 
-An hybrid npm module and CLI for turning plain-text into ascii-art.
+A hybrid npm module and CLI for turning plain text into ascii art. 
+A pure JS figlet tool to make all your banners better.
 
 ## Getting started
 

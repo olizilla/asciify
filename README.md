@@ -9,21 +9,13 @@ ASCIIFY
 
 An hybrid npm module and CLI for turning plain-text into ascii-art.
 
-A thin wrapper around the most excellent [figlet-js][], as it's not yet available in npm.
-
 ## Getting started
 
 Install [Node.js](http://nodejs.org/)
 
-Install asciify:
-
-    cd /your/project/directory
+Install asciify and gasp:
+    
     npm install -g asciify
-
-
-## Examples
-
-Or from the CLI:
 
     asciify "Boom" -f larry3d
      ____                                   
@@ -40,7 +32,7 @@ For a really good time call:
     asciify -a "All The Fonts!"
 
 
-Or as a node module:
+Or use it as a node module:
 
     asciify('Awesome', function(text){ console.log(text) });
        _____                                                     
@@ -64,13 +56,13 @@ And again with the font option:
     /**      //******  ***  /**  //**  ******    **  
     //        //////  ///   //    //  //////    //   
 
-                                        
 
-## TODO                                        
+## Thanks to
 
-    asciify('Multi\nLine\nText')
+- [figlet-js][] which does the magic
+- [optimist][], smoothing the choppy waters of CLI argument parsing.
+- [node-tap][], robot friendly test codez, and all the wonders of npm.
 
-    asciify(['All', 'The', 'Strings'])
-
-
-[figlet-js]:https://github.com/scottgonzalez/figlet-js
+[figlet-js]: https://github.com/scottgonzalez/figlet-js
+[optimist]: https://github.com/substack/node-optimist
+[node-tap]: https://github.com/isaacs/node-tap

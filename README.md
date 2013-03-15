@@ -1,5 +1,7 @@
 ASCIIFY
 =======
+A hybrid npm module and CLI for turning plain text into ascii art. A pure JS figlet tool to make all your banners better.
+
                                         __________________________  ______________
                                         \__    ___/\_   _____/\   \/  /\__    ___/
     Takes text, awesomizes it, returns    |    |    |    __)_  \     /   |    |   
@@ -7,8 +9,7 @@ ASCIIFY
                                           |____|   /_______  //___/\  \  |____|   
                                                            \/       \_/           
 
-A hybrid npm module and CLI for turning plain text into ascii art. 
-A pure JS figlet tool to make all your banners better.
+[![Dependency Status](https://david-dm.org/olizilla/asciify.png)](https://david-dm.org/olizilla/asciify)
 
 ## Getting started
 

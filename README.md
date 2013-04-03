@@ -12,9 +12,9 @@ A pure JS figlet tool to make all your banners better.
 
 ## Getting started
 
-Install [Node.js](http://nodejs.org/)
+Install [Node.js](http://nodejs.org/) (tested on 0.8 and 0.10)
 
-Install asciify and gasp:
+Install `asciify` and gasp:
     
     npm install -g asciify
 
@@ -35,7 +35,7 @@ For a really good time call:
 
 Or use it as a node module:
 
-    asciify('Awesome', function(text){ console.log(text) });
+    asciify('Awesome', function(err, res){ console.log(res) });
        _____                                                     
       /  _  \  __  _  __  ____    ______  ____    _____    ____  
      /  /_\  \ \ \/ \/ /_/ __ \  /  ___/ /  _ \  /     \ _/ __ \ 
@@ -46,7 +46,7 @@ Or use it as a node module:
 
 And again with the font option:
 
-    asciify('Fonts?', {font:'3-d'}, function(text){ console.log(text));
+    asciify('Fonts?', {font:'3-d'}, function(err, res){ console.log(res));
 
      ********                     **            **** 
     /**/////                     /**           **//**
@@ -67,3 +67,8 @@ And again with the font option:
 [figlet-js]: https://github.com/scottgonzalez/figlet-js
 [optimist]: https://github.com/substack/node-optimist
 [node-tap]: https://github.com/isaacs/node-tap
+
+## Release History
+
+* 1.2.0 - Asciify now a good node citizen, callback takes an error as first arg.
+* 1.0.1 - IT BEGINS. ASCII BANNERS NOW MANDTORY.

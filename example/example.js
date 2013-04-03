@@ -11,10 +11,10 @@ Usage: node example.js
 
 var asciify = require('../');
 
-asciify('ASCIIFY!', function(result){
+asciify('ASCIIFY!', function(err, result){
 	console.log(result);
 });
 
-asciify('Got Fonts?', '3-d', function(result){
+asciify('Got Fonts?', '3-d', function(err, result){
 	console.log(result);
 });

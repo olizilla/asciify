@@ -6,7 +6,8 @@
 \____|__  //_______  / \______  /|___||___| \___  /    / ______| __
         \/         \/         \/                \/     \/        \/
 
-https://github.com/olizilla/asciify
+Install: npm install asciify
+Usage: asciify('foo', {font:'3-d'}, function(err, result){console.log(result)})
 */
 
 module.exports = function (text, opts, callback) {
@@ -24,15 +25,15 @@ module.exports = function (text, opts, callback) {
 		opts = { font: opts };
 	}
 
-	asciify(text, opts.font, function(result){ 
-		callback(result); 
+	asciify(text, opts.font, function(err, result){ 
+		callback(err, result); 
 	});
 
 	// Current implementation depends on figlet-js.
 	function asciify(text, font, callback){
 		var figlet = require('./lib/figlet-js/figlet-node');
-		figlet.Figlet.write(text, opts.font, function(asciifiedText){
-			callback(asciifiedText);
+		figlet.Figlet.write(text, opts.font, function(err, asciifiedText){
+			callback(err, asciifiedText);
 		});	
 	}
 };

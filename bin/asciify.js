@@ -1,8 +1,20 @@
 #!/usr/bin/env node
+/*
+   _____     __________________  .___ .___ ________________.___.._.
+  /  _  \   /   _____/\_   ___ \ |   ||   |\_   _____/\__  |   || |
+ /  /_\  \  \_____  \ /    \  \/ |   ||   | |    __)   /   |   || |
+/    |    \ /        \\     \____|   ||   | |     \    \____   | \|
+\____|__  //_______  / \______  /|___||___| \___  /    / ______| __
+        \/         \/         \/                \/     \/        \/
+
+Install: npm install -g asciify
+Usage: asciify "my prose"
+*/
 
 var asciify = require('../');
 var fs = require('fs');
 var path = require('path');
+var pad = require('pad');
 var argv = require('optimist')
 	.usage('Plain text awesomizer.\nUsage: $0 "your text here"')
     .alias('l', 'list')
@@ -19,13 +31,13 @@ var argv = require('optimist')
     })
     .argv;
 
+// Show font list
 if (argv.list){
-
 	listFonts();
-
 	return;
 }
 
+// Show text in all the fonts
 if (argv.all){	
 	var exampleText = 'Asciify!';          // Default
 
@@ -37,14 +49,13 @@ if (argv.all){
 	}
 
 	showAll(exampleText);
-
 	return;
 }
 
-// DO IT!
+// Do a regular asciification.
 console.log('');
 argv._.forEach(function(arg){
-	asciify(arg, argv.font, function(result){
+	asciify(arg, argv.font, function(err, result){
 		console.log(result);
 	});
 });
@@ -54,8 +65,11 @@ argv._.forEach(function(arg){
  */
 function listFonts(){
 	getFonts(function(fonts){
+
+		var padSize = ('' + fonts.length).length;
+
 		fonts.forEach(function(font, index){
-			console.log(index + ': ' + font);
+			console.log(pad(padSize, index+1, '0') + ': ' + font);
 		});
 	});
 }
@@ -67,10 +81,12 @@ function showAll(text){
 
 	getFonts(function(fonts){
 
+		var padSize = ('' + fonts.length).length;
+
 		fonts.forEach(function(font, index) {
 			
-			asciify(exampleText, font, function(result){
-				console.log(index + ': ' + font);
+			asciify(exampleText, font, function(err, result){
+				console.log(pad(padSize, index+1, '0') + ': ' + font);
 				console.log(result);
 				console.log('');
 			});

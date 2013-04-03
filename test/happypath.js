@@ -3,15 +3,15 @@ var asciify = require('../');
 
 test("Check it works at all", function (t) {
 
-	t.plan(2);
+	t.plan(3);
 
 	// A simple line-noise style comparison of asciified result with raw string
-	asciify('A', function(res){
+	asciify('A', function(err, res){
 		t.equal(res, '   _____   \n  /  _  \\  \n /  /_\\  \\ \n/    |    \\\n\\____|__  /\n        \\/ \n', 'A should have been asciified with the graphiti font');
 	});
 
 	// A crazyballs multiline hack style comparison, so the user may have some idea what's being compared. Neither is that readable.
-	asciify('B', '3-d', function(res){
+	asciify('B', '3-d', function(err, res){
 		t.equal(
 			res,
 			multilinehack(function(){/*
@@ -27,6 +27,10 @@ test("Check it works at all", function (t) {
 */}),
 			'B should have been rendered in the 3-d figlet font'
 		);
+	});
+
+	asciify('nosuch font', { font: 'nosuch' }, function(err, res){
+		t.ok(err);
 	});
 });
 

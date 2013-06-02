@@ -56,6 +56,9 @@ if (argv.all){
 console.log('');
 argv._.forEach(function(arg){
 	asciify(arg, argv.font, function(err, result){
+		if (err) {
+			return console.error(err);
+		}
 		console.log(result);
 	});
 });

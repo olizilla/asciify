@@ -8,7 +8,6 @@ test("Check it works at all", function (t) {
 	// Did any fonts go missing?
 	asciify.getFonts(function (err, fonts){
 		t.equal(fonts.length, 147, 'We should have 147 fonts');
-		t.equal(fonts[0], '3-d', 'The first font should be "3-d"');
 	});
 
 	// A simple line-noise style comparison of asciified result with raw string
@@ -68,7 +67,7 @@ _____
 
 test("Check asciify ensures text is a string", function (t) {
 	
-	t.plan(1);
+	t.plan(3);
 	
 	asciify(138, 'pyramid', function(err, res){
 		t.equal(
@@ -116,7 +115,7 @@ test("Check asciify errors if font name is not a string", function (t) {
 	t.plan(2);
 
 	asciify('OMG', {font: 10}, function(err, res){
-			t.assert(err, 'Passing in 10 as the font name should cause an error');
+		t.assert(err, 'Passing in 10 as the font name should cause an error');
 	});
 
 	asciify('OMG', 10, function(err, res){

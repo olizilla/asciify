@@ -4,17 +4,21 @@
  /  /_\  \  \_____  \ /    \  \/ |   ||   | |    __)   /   |   || |
 /    |    \ /        \\     \____|   ||   | |     \    \____   | \|
 \____|__  //_______  / \______  /|___||___| \___  /    / ______| __
-        \/         \/         \/                \/     \/        \/	        
+        \/         \/         \/                \/     \/        \/     
 
 Usage: node example.js
 */
 
 var asciify = require('../');
 
-asciify('ASCIIFY!', function(err, result){
-	console.log(result);
+asciify.getFonts(function (err, fonts) {
+	console.log('Available fonts',fonts);
 });
 
-asciify('Got Fonts?', '3-d', function(err, result){
-	console.log(result);
+asciify('ASCIIFY!', function (err, result) {
+	console.log('\nASCIIFY!\n', result);
+});
+
+asciify('Got Fonts?', '3-d', function (err, result) {
+	console.log('\nGot Fonts?\n', result);
 });

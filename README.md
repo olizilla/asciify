@@ -59,6 +59,10 @@ And again with the font option:
     //        //////  ///   //    //  //////    //   
 
 
+**Bonus method**
+
+    asciify.getFonts(function (err, fonts) { fonts.forEach( console.log ) )
+
 ## Thanks to
 
 - [figlet-js][] which does the magic
@@ -71,5 +75,6 @@ And again with the font option:
 
 ## Release History
 
+* 1.3.0 - Adds input validation and a getFonts method
 * 1.2.0 - Asciify now a good node citizen, callback takes an error as first arg.
 * 1.0.1 - IT BEGINS. ASCII BANNERS NOW MANDTORY.

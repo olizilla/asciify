@@ -3,7 +3,13 @@ var asciify = require('../');
 
 test("Check it works at all", function (t) {
 
-	t.plan(3);
+	t.plan(4);
+
+	// Did any fonts go missing?
+	asciify.getFonts(function (err, fonts){
+		t.equal(fonts.length, 147, 'We should have 147 fonts');
+		t.equal(fonts[0], '3-d', 'The first font should be "3-d"');
+	});
 
 	// A simple line-noise style comparison of asciified result with raw string
 	asciify('A', function(err, res){
@@ -105,7 +111,20 @@ test("Check asciify ensures text is a string", function (t) {
 	
 });
 
+test("Check asciify errors if font name is not a string", function (t) {
 
+	t.plan(2);
+
+	asciify('OMG', {font: 10}, function(err, res){
+			t.assert(err, 'Passing in 10 as the font name should cause an error');
+	});
+
+	asciify('OMG', 10, function(err, res){
+		t.assert(err, 'Passing in 10 as the options object should cause an error');
+	});
+});
+
+// Helper to make the tests more "readable"
 function multilinehack(mess){
 	// Crazyballs multiline hack courtesy of: https://github.com/isaacs/node-tap/blob/69d721718acc56b5c8ae5875cf8d9bf53f7d5016/bin/tap.js#L58
 	return mess.toString().split(/\n/).slice(1, -1).join("\n");

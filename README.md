@@ -9,8 +9,10 @@ A hybrid npm module and CLI for turning plain text into ascii art. A pure JS fig
                                           |____|   /_______  //___/\  \  |____|   
                                                            \/       \_/           
 
-[![Build Status](https://travis-ci.org/olizilla/asciify.png)](https://travis-ci.org/olizilla/asciify)
+[![NPM](http://nodei.co/npm/asciify.png)](http://nodei.co/npm/asciify/)
+
 [![Dependency Status](https://david-dm.org/olizilla/asciify.png)](https://david-dm.org/olizilla/asciify)
+[![Build Status](https://travis-ci.org/olizilla/asciify.png)](https://travis-ci.org/olizilla/asciify)
 
 ## Getting started
 

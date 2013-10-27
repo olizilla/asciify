@@ -11,6 +11,7 @@ Usage:
 	var asciify = require('asciify');
 	asciify('Whoa', {font:'3-d'}, function(err, result){console.log(result)});
 */
+var figlet = require('./lib/figlet-js/figlet-node');
 var path = require('path');
 var fs = require('fs');
 
@@ -43,7 +44,6 @@ module.exports = function (text, opts, callback) {
 
 	// Current implementation depends on figlet-js.
 	function asciify (text, font, callback) {
-		var figlet = require('./lib/figlet-js/figlet-node');
 		figlet.Figlet.write(text, font, function (err, asciifiedText) {
 			callback(err, asciifiedText);
 		});	

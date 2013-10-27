@@ -76,6 +76,15 @@ And again with the font option:
 [optimist]: https://github.com/substack/node-optimist
 [node-tap]: https://github.com/isaacs/node-tap
 
+## Developing
+
+```shell
+ git submodule init
+ git submodule update
+ npm install
+ npm test
+```
+
 ## Release History
 
 * 1.3.0 - Adds input validation and a getFonts method

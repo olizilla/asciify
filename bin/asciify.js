@@ -21,6 +21,8 @@ var argv = require('optimist')
     .describe('a', 'SHOW ALL THE FONTS!')
     .alias('f', 'font')
     .describe('f', 'Font to use for asciification')
+    .alias('t', 'truncate')
+    .describe('t', 'Trim the output to fit the tty')
     .default('f', 'graffiti')
     .check(function(argv){
     	if(!argv.list && !argv.all && argv._.length === 0) { 
@@ -53,9 +55,14 @@ if (argv.all){
 // Do a regular asciification.
 console.log('');
 argv._.forEach(function (arg) {
-	asciify(arg, argv.font, function (err, result) {
-		if (err) { return console.error(err); }
+  var opts = { font: argv.font }
+  
+  if (argv.truncate && process.stdout.isTTY) {
+    opts.maxWidth = process.stdout.columns
+  }
 
+	asciify(arg, opts, function (err, result) {
+		if (err) { return console.error(err); }
 		console.log(result);
 	});
 });
@@ -87,7 +94,6 @@ function showAll (text) {
 		var padSize = ('' + fonts.length).length;
 
 		fonts.forEach(function(font, index) {
-			
 			asciify(exampleText, font, function (err, result) {
 				console.log(pad(padSize, index+1, '0') + ': ' + font);
 				console.log(result);

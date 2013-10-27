@@ -87,6 +87,9 @@ And again with the font option:
 
 ## Release History
 
+* 1.3.3 - Add maxWidth option to allow output truncation
+* 1.3.2 - Update figlet-js with falsy input validation
+* 1.3.1 - Update figlet-js with unknown char fixes
 * 1.3.0 - Adds input validation and a getFonts method
 * 1.2.0 - Asciify now a good node citizen, callback takes an error as first arg.
 * 1.0.1 - IT BEGINS. ASCII BANNERS NOW MANDTORY.

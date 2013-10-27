@@ -38,17 +38,22 @@ module.exports = function (text, opts, callback) {
 		callback('opts.font should be a font name string')
 	}
 
-	asciify(text, opts.font, function (err, result) {
-		callback(err, result); 
-	});
-
 	// Current implementation depends on figlet-js.
-	function asciify (text, font, callback) {
-		figlet.Figlet.write(text, font, function (err, asciifiedText) {
-			callback(err, asciifiedText);
-		});	
-	}
+	figlet.Figlet.write(text, opts.font, function (err, asciifiedText) {
+		if (opts.maxWidth){
+			asciifiedText = trimToMaxWidth(opts.maxWidth, asciifiedText);
+		}
+		callback(err, asciifiedText);
+	});	
 };
+
+// truncate the ascii art to fit a thing
+function trimToMaxWidth (width, text) {
+	var truncated = text.split('\n').map(function (line) {
+		return line.substring(0, width);
+	})
+	return truncated.join('\n');
+}
 
 /*
  * Provide the callback with array of font names, sans file extension.

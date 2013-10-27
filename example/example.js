@@ -16,9 +16,13 @@ asciify.getFonts(function (err, fonts) {
 });
 
 asciify('ASCIIFY!', function (err, result) {
-	console.log('\nASCIIFY!\n', result);
+	console.log('\nASCIIFY!\n' + result);
 });
 
-asciify('Got Fonts?', '3-d', function (err, result) {
-	console.log('\nGot Fonts?\n', result);
+asciify('Got   Fonts?', '3-d', function (err, result) {
+	console.log('\nGot Fonts?\n' + result);
+});
+
+asciify('What the fudge', {font: 'larry3d', maxWidth: 90 }, function (err, result) {
+  console.log('\nWhat The\n' + result);
 });

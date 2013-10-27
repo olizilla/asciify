@@ -123,6 +123,27 @@ test("Check asciify errors if font name is not a string", function (t) {
 	});
 });
 
+test("Check maxWidth option truncates output", function (t) {
+
+	t.plan(1);
+
+	asciify('OMG WTF BBQ', {maxWidth: 80}, function(err, res){
+		t.equal(
+			res,
+			multilinehack(function () {/*
+________      _____     ________   __      __ ______________________ __________ 
+\_____  \    /     \   /  _____/  /  \    /  \\__    ___/\_   _____/ \______   \
+ /   |   \  /  \ /  \ /   \  ___  \   \/\/   /  |    |    |    __)    |    |  _/
+/    |    \/    Y    \\    \_\  \  \        /   |    |    |     \     |    |   \
+\_______  /\____|__  / \______  /   \__/\  /    |____|    \___  /     |______  /
+        \/         \/         \/         \/                   \/             \/ 
+
+*/}),
+			'OMG WTF BBQ should have been asciified and truncated to 80'
+		);	
+	});
+});
+
 // Helper to make the tests more "readable"
 function multilinehack(mess){
 	// Crazyballs multiline hack courtesy of: https://github.com/isaacs/node-tap/blob/69d721718acc56b5c8ae5875cf8d9bf53f7d5016/bin/tap.js#L58

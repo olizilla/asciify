@@ -14,6 +14,7 @@ Usage:
 var figlet = require('./lib/figlet-js/figlet-node');
 var path = require('path');
 var fs = require('fs');
+var chalk = require('chalk');
 
 module.exports = function (text, opts, callback) {
 
@@ -42,6 +43,9 @@ module.exports = function (text, opts, callback) {
 	figlet.Figlet.write(text, opts.font, function (err, asciifiedText) {
 		if (opts.maxWidth) {
 			asciifiedText = trimToMaxWidth(opts.maxWidth, asciifiedText);
+		}
+		if (opts.color) {
+			asciifiedText = chalk[opts.color](asciifiedText);
 		}
 		callback(err, asciifiedText);
 	});

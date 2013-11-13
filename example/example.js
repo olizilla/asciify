@@ -15,7 +15,7 @@ asciify.getFonts(function (err, fonts) {
 	console.log('Available fonts',fonts);
 });
 
-asciify('ASCIIFY!', function (err, result) {
+asciify('ASCIIFY!', {color: 'green'}, function (err, result) {
 	console.log('\nASCIIFY!\n' + result);
 });
 

@@ -50,7 +50,7 @@ Or use it as a node module:
 
 And again with the font option:
 
-    asciify('Fonts?', {font:'3-d'}, function(err, res){ console.log(res));
+    asciify('Fonts?', {font:'3-d'}, function(err, res){ console.log(res) });
 
      ********                     **            **** 
     /**/////                     /**           **//**
@@ -61,6 +61,14 @@ And again with the font option:
     /**      //******  ***  /**  //**  ******    **  
     //        //////  ///   //    //  //////    //   
 
+
+Now with color support thanks to [chalk](https://github.com/sindresorhus/chalk) and @jlowgren
+
+  asciify(
+    'Make it come out green', 
+    {color:'green'}, 
+    function(err, res){ console.log(res)}
+  );
 
 **Bonus method**
 
@@ -87,6 +95,7 @@ And again with the font option:
 
 ## Release History
 
+* 1.3.4 - Add `color` option to pick your font color
 * 1.3.3 - Add maxWidth option to allow output truncation
 * 1.3.2 - Update figlet-js with falsy input validation
 * 1.3.1 - Update figlet-js with unknown char fixes

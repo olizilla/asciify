@@ -95,7 +95,8 @@ Now with color support thanks to [chalk](https://github.com/sindresorhus/chalk) 
 
 ## Release History
 
-* 1.3.4 - Add `color` option to pick your font color
+* 1.3.5 - Fix chalk dependency mix up
+* 1.3.4 - Add `color` option to pick your font color (DO NOT USE)
 * 1.3.3 - Add maxWidth option to allow output truncation
 * 1.3.2 - Update figlet-js with falsy input validation
 * 1.3.1 - Update figlet-js with unknown char fixes

@@ -5,11 +5,11 @@
   "main": "index.js",
   "dependencies": {
     "optimist": "~0.6.0",
-    "pad": "0.0.4"
+    "pad": "0.0.4",
+    "chalk": "~0.3.0"
   },
   "devDependencies": {
-    "tap": "~0.4.1",
-    "chalk": "~0.3.0"
+    "tap": "~0.4.1"
   },
   "directories": {
     "test": "test"

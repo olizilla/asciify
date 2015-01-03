@@ -36,7 +36,7 @@ module.exports = function (text, opts, callback) {
 	opts.font = opts.font || 'graffiti';
 
 	if (typeof opts.font !== 'string') {
-		callback('opts.font should be a font name string');
+		return callback(new Error('opts.font should be a font name string'));
 	}
 
 	// Current implementation depends on figlet-js.

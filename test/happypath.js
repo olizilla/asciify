@@ -123,6 +123,16 @@ test("Check asciify errors if font name is not a string", function (t) {
 	});
 });
 
+test("Callback called only once when font name is not a string", function (t) {
+	var callCount = 0;
+
+	asciify('OMG', 10, function(err, res){
+		if (callCount) return t.fail('Callback called twice');
+		callCount++;
+		setTimeout(function () { t.end(); }, 1000);
+	});
+});
+
 test("Check maxWidth option truncates output", function (t) {
 
 	t.plan(1);

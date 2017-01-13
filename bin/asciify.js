@@ -101,10 +101,10 @@ function showAll (text) {
 		fonts.forEach(function(font, index) {
 			const opts = {
 				font: font,
-				color: 'red'
+				color: argv.color
 			};
 
-			asciify(exampleText, font, function (err, result) {
+			asciify(exampleText, opts, function (err, result) {
 				console.log(pad(padSize, index+1, '0') + ': ' + font);
 				console.log(result);
 				console.log('');

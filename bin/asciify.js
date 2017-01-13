@@ -20,7 +20,7 @@ var argv = require('optimist')
     .alias('a', 'all')
     .describe('a', 'SHOW ALL THE FONTS!')
     .alias('c', 'color')
-    .describe('c', 'Colors of the rainbow')    
+    .describe('c', 'Chalk.js style names')    
     .alias('f', 'font')
     .describe('f', 'Font to use for asciification')
     .alias('t', 'truncate')
@@ -105,8 +105,6 @@ function showAll (text) {
 			};
 
 			asciify(exampleText, opts, function (err, result) {
-				if (err) { return console.error(err); }
-
 				console.log(pad(padSize, index+1, '0') + ': ' + font);
 				console.log(result);
 				console.log('');

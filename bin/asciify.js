@@ -105,6 +105,8 @@ function showAll (text) {
 			};
 
 			asciify(exampleText, opts, function (err, result) {
+				if (err) { return console.error(err); }
+
 				console.log(pad(padSize, index+1, '0') + ': ' + font);
 				console.log(result);
 				console.log('');

@@ -44,7 +44,7 @@ module.exports = function (text, opts, callback) {
 		if (opts.maxWidth) {
 			asciifiedText = trimToMaxWidth(opts.maxWidth, asciifiedText);
 		}
-		if (opts.color) {
+		if (opts.color && chalk.styles[opts.color]) {
 			asciifiedText = chalk[opts.color](asciifiedText);
 		}
 		callback(err, asciifiedText);

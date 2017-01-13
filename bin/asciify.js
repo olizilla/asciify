@@ -99,7 +99,7 @@ function showAll (text) {
 		var padSize = ('' + fonts.length).length;
 
 		fonts.forEach(function(font, index) {
-			const opts = {
+			var opts = {
 				font: font,
 				color: argv.color
 			};

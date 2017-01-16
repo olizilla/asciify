@@ -4,7 +4,7 @@
   "description": "Plain text awesomizer. A hybrid npm module and CLI for turning plain text into ascii art.",
   "main": "index.js",
   "dependencies": {
-    "chalk": "^1.1.3",
+    "chalk": "~1.1.0",
     "optimist": "~0.6.0",
     "pad": "0.0.4"
   },

@@ -32,5 +32,8 @@
     "text"
   ],
   "author": "olizilla",
-  "license": "BSD"
+  "license": "BSD",
+  "engines" : { 
+    "node" : ">=0.12" 
+  }
 }

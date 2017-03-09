@@ -19,6 +19,8 @@ var argv = require('optimist')
     .describe('l', 'List the fonts')
     .alias('a', 'all')
     .describe('a', 'SHOW ALL THE FONTS!')
+    .alias('c', 'color')
+    .describe('c', 'Chalk style names')    
     .alias('f', 'font')
     .describe('f', 'Font to use for asciification')
     .alias('t', 'truncate')
@@ -55,7 +57,10 @@ if (argv.all){
 // Do a regular asciification.
 console.log('');
 argv._.forEach(function (arg) {
-  var opts = { font: argv.font }
+  var opts = { 
+  	font: argv.font,
+  	color: argv.color
+  }
   
   if (argv.truncate && process.stdout.isTTY) {
     opts.maxWidth = process.stdout.columns
@@ -94,7 +99,12 @@ function showAll (text) {
 		var padSize = ('' + fonts.length).length;
 
 		fonts.forEach(function(font, index) {
-			asciify(exampleText, font, function (err, result) {
+			var opts = {
+				font: font,
+				color: argv.color
+			};
+
+			asciify(exampleText, opts, function (err, result) {
 				console.log(pad(padSize, index+1, '0') + ': ' + font);
 				console.log(result);
 				console.log('');
